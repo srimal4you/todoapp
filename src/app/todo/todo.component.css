@@ -1,0 +1,116 @@
+.container-header {
+	height:50px;
+	text-align: center;
+	margin-top: 80px;
+	margin-bottom: 25px;
+}
+
+.container-footer {
+	margin-top: 50px;
+	border: 2px solid #fff;
+	padding: 15px;
+}
+
+.container-header .title {
+	font-size: 30px;
+	color: #fff;
+}
+
+.todo-item {
+
+	font-family: 'Quicksand', sans-serif;
+	font-size: 25px;
+	margin-top: 5px;
+	padding: 15px;
+  height: 20px;
+  background-color: #73B1D6;
+
+  line-height: 20px;
+}
+
+.todo-item .number {
+	font-family: 'Tinos', serif;
+	display: inline;
+}
+.todo-item .content {
+	font-family: 'Lato', sans-serif;
+	display: inline;
+}
+
+.todo-item .checkbx {
+  float: right;
+  margin-top: -10px;
+	margin-right: 34px;
+}
+
+
+/* Styles for css checkboxes*/
+.check {
+  width: 40px;
+  height: 36px;
+  position: absolute;
+}
+.check input {
+  display: none;
+}
+.check input:checked + .box {
+  background-color: #b3ffb7;
+}
+.check input:checked + .box:after {
+  top: 0;
+}
+.check .box {
+  width: 100%;
+  height: 100%;
+  transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+  border: 2px solid transparent;
+  background-color: #336e7b;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.check .box:after {
+  width: 50%;
+  height: 20%;
+  content: '';
+  position: absolute;
+  border-left: 7.5px solid;
+  border-bottom: 7.5px solid;
+  border-color: #40c540;
+  transform: rotate(-45deg) translate3d(0, 0, 0);
+  transform-origin: center center;
+  transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+  left: 0;
+  right: 0;
+  top: 200%;
+  bottom: 5%;
+  margin: auto;
+}
+
+/* Styles for text inputs*/
+.txtbx input[type="text"] {
+	color: #3a3a3a;
+	font-family: 'Tinos', serif;
+	font-size: 25px;
+	width: 80%;
+  padding: 7px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+.txtbx input[type="text"]:focus,
+.txtbx input[type="text"].focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+.addbtn {
+	font-size: 25px;
+	  height: 44px;
+    width: 15%;
+    background-color: #73b1d6;
+    border: none;
+}
+
+.footer-header {
+	color: #FFF;
+}
