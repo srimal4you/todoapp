@@ -42,4 +42,9 @@ export class TodoService {
   	this.todos.push(todo);
   }
 
+  toggleCompleted(hero: Todo): void {
+
+    this.getTodos().find(h => hero === h).completed = !hero.completed;
+  }
+
 }

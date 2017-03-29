@@ -27,4 +27,8 @@ export class TodoComponent implements OnInit {
   	this.newTodo = new Todo();
   }
 
+  toggleCompleted(todo: Todo) {
+    this.todoService.toggleCompleted(todo);
+  }
+
 }

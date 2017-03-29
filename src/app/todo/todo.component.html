@@ -14,7 +14,7 @@
 				</div>
 				<div class="checkbx">
 					<label class="check">
-				  	<input type="checkbox" [checked]="todo.completed"/>
+				  	<input type="checkbox" [checked]="todo.completed" (click)="toggleCompleted(todo)"/>
 				  	<div class="box"></div>
 					</label>
 				</div>
