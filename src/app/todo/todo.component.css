@@ -114,3 +114,7 @@
 .footer-header {
 	color: #FFF;
 }
+
+.todo-completed {
+  text-decoration: line-through;
+}

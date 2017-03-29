@@ -9,12 +9,12 @@
 				<div class="number">
 					{{todo.id}}
 				</div>
-				<div class="content">
-					{{todo.description}}
+				<div [ngClass]="{'todo-completed': todo.completed}" class="content">
+					{{todo.name}}
 				</div>
 				<div class="checkbx">
 					<label class="check">
-				  	<input type="checkbox"/>
+				  	<input type="checkbox" [checked]="todo.completed"/>
 				  	<div class="box"></div>
 					</label>
 				</div>
@@ -28,8 +28,8 @@
 			</div>
 			<div class="footer-content">
 			<div class="newtodo txtbx">
-				<input type="text" class="txtbx" name="itemname">
-				<button type="" class="addbtn">Add</button>
+				<input type="text" class="txtbx" [(ngModel)]="newTodo.name">
+				<button (click)="addTodo()" class="addbtn">Add</button>
 			</div>
 
 			</div>
