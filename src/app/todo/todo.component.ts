@@ -17,8 +17,14 @@ export class TodoComponent implements OnInit {
   constructor(private todoService: TodoService) { }
 
   ngOnInit() {
-  	this.todoService.getTodos()
-  		.then(todos => this.todos = todos)
+    this.getTodos();
+  }
+
+  getTodos() : void {
+
+    this.todoService.getTodos()
+      .then(todos => this.todos = todos)
+
   }
 
   addTodo():void {
@@ -29,7 +35,8 @@ export class TodoComponent implements OnInit {
   }
 
   toggleCompleted(todo: Todo) {
-    this.todoService.toggleCompleted(todo);
+    this.todoService.toggleCompleted(todo)
+      .then(()=> this.getTodos());
   }
 
 }
