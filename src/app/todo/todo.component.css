@@ -37,12 +37,20 @@
 	display: inline;
 }
 
+.todo-item .controllers {
+    margin-top: -10px;
+    float: right;
+    display: inline-flex;
+}
 .todo-item .checkbx {
-  float: right;
-  margin-top: -10px;
+
 	margin-right: 34px;
+  display: inline;
 }
 
+.todo-item .controllers button {
+  height: 41px;
+}
 
 /* Styles for css checkboxes*/
 .check {
@@ -117,4 +125,8 @@
 
 .todo-completed {
   text-decoration: line-through;
+}
+
+.delete {
+    padding-right: 5px;
 }

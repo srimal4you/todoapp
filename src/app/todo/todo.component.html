@@ -12,11 +12,16 @@
 				<div [ngClass]="{'todo-completed': todo.completed}" class="content">
 					{{todo.name}}
 				</div>
-				<div class="checkbx">
-					<label class="check">
-				  	<input type="checkbox" [checked]="todo.completed" (click)="toggleCompleted(todo)"/>
-				  	<div class="box"></div>
-					</label>
+				<div class="controllers">
+					<div class="delete">
+						<button (click)="deleteTodo(todo)">Delete</button>
+					</div>
+					<div class="checkbx">
+						<label class="check">
+					  	<input type="checkbox" [checked]="todo.completed" (click)="toggleCompleted(todo)"/>
+					  	<div class="box"></div>
+						</label>
+					</div>
 				</div>
 			</div>
 

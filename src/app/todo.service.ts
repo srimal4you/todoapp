@@ -11,7 +11,7 @@ export class TodoService {
 	todos: Todo[] = [];
 	id: number = 0;
 
-  apiBase: string = 'http://localhost:4201';
+  apiBase: string = 'http://localhost:4201/api';
   headers: Headers;
   options: RequestOptions;
 
@@ -25,7 +25,7 @@ export class TodoService {
 
   getTodos(): Promise<Todo[]>{
 
-  	let endpoint = `${this.apiBase}/todos`;
+  	let endpoint = `${this.apiBase}/todo`;
 
 		return this.http.get(endpoint)
                .toPromise()
@@ -34,24 +34,35 @@ export class TodoService {
 
   }
 
-  addTodo(todo: Todo):void{
-  	if(!todo.id){
-  		todo.id = ++ this.id;
-  	}
+  addTodo(todo: Todo):Promise<any>{
 
-  	this.todos.push(todo);
+    let url = `${this.apiBase}/todo/`;
+    return this.http.post(url,JSON.stringify(todo),this.options)
+      .toPromise()
+      .then(response => { return response.json()})
+      .catch(this.handleError);
+
   }
 
   toggleCompleted(todo: Todo): Promise<Todo> {
 
     todo.completed = !todo.completed;
 
-    let url = `${this.apiBase}/todos/${todo.id}`;
+    let url = `${this.apiBase}/todo/${todo._id}`;
 
     return this.http.put(url, JSON.stringify(todo),this.options)
            .toPromise()
            .then(response => response.json() as Todo)
            .catch(this.handleError);
+  }
+
+  deleteTodo(todo : Todo): Promise<any> {
+    
+    let url = `${this.apiBase}/todo/${todo._id}`;
+    return this.http.delete(url, this.options)
+      .toPromise()
+      .then(response => response.json())
+      .catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {
