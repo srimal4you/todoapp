@@ -3,7 +3,7 @@ import { Headers, Http, RequestOptions } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Todo } from './todo';
+import { Todo } from '../../classes/todo';
 
 @Injectable()
 export class TodoService {
@@ -16,10 +16,12 @@ export class TodoService {
   options: RequestOptions;
 
   constructor(private http: Http) {
+    let user = JSON.parse(localStorage.getItem('currentUser'));
 
-        this.headers = new Headers({ 'Content-Type': 'application/json', 
-                                     'Accept': 'q=0.8;application/json;q=0.9' });
-        this.options = new RequestOptions({ headers: this.headers });
+    this.headers = new Headers({ 'Content-Type': 'application/json',
+                                 'x-access-token': user.token 
+                    });
+    this.options = new RequestOptions({ headers: this.headers });
 
   }
 
@@ -27,7 +29,7 @@ export class TodoService {
 
   	let endpoint = `${this.apiBase}/todo`;
 
-		return this.http.get(endpoint)
+		return this.http.get(endpoint, {headers: this.headers})
                .toPromise()
                .then(response => response.json() as Todo[])
                .catch(this.handleError);

@@ -1,0 +1,6 @@
+<form>
+	<p *ngIf="error">{{error}}</p>
+	<input type="text" name="username" [(ngModel)]="model.username"><br>
+	<input type="password" name="username" [(ngModel)]="model.password"><br>
+	<button (click)="authUser()">Submit</button>
+</form>

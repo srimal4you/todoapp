@@ -1,23 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from '../todo';
-
-import { TodoService} from '../todo.service';
+import { Todo } from '../../classes/todo';
+import { TodoService} from '../../services/todo/todo.service';
+import { AuthenticationService } from '../../services/authentication/authentication.service';
+import { User } from '../../classes/user';
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css'],
-  providers: [ TodoService ]
+  providers: [ TodoService, AuthenticationService ]
 })
 export class TodoComponent implements OnInit {
 
 	todos: Todo[];
 	newTodo: Todo = new Todo();
 
-  constructor(private todoService: TodoService) { }
+  constructor(
+
+    private todoService: TodoService,
+    private authenticationService: AuthenticationService
+
+  ) { }
 
   ngOnInit() {
+
     this.getTodos();
+    
   }
 
   getTodos() : void {
