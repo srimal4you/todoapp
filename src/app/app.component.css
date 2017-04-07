@@ -1,3 +1,10 @@
 md-sidenav-container {
   position: absolute;
 }
+md-sidenav {
+  width: 300px;
+}
+
+md-nav-list md-list-item {
+  padding: 10px 16px;
+}

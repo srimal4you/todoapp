@@ -7,24 +7,24 @@
     </button>
   </md-toolbar>
 
-<md-sidenav-container>
-  <md-sidenav #sidenav>
-    <md-nav-list>
-      <md-list-item> Pepper </md-list-item>
-      <md-list-item> Salt </md-list-item>
-      <md-list-item> Paprika </md-list-item>
-  </md-nav-list>
-  </md-sidenav>
+  <md-sidenav-container>
+    <md-sidenav #sidenav>
+      <md-nav-list>
+        <md-list-item>
+          <md-icon>home</md-icon> Home </md-list-item>
+        <md-list-item><md-icon>Account box</md-icon> My Account </md-list-item>
+      </md-nav-list>
+    </md-sidenav>
 
-  <div>
+    <div>
 
-    <md-menu x-position="before" #menu="mdMenu">
-      <button md-menu-item>Option 1</button>
-      <button [routerLink]="['/login']" md-menu-item>Log Out</button>
-    </md-menu>
+      <md-menu x-position="before" #menu="mdMenu">
+        <button md-menu-item>Option 1</button>
+        <button [routerLink]="['/login']" md-menu-item>Log Out</button>
+      </md-menu>
 
-    <router-outlet></router-outlet>
-  </div>
+      <router-outlet></router-outlet>
+    </div>
 
-</md-sidenav-container>
+  </md-sidenav-container>
 </div>
