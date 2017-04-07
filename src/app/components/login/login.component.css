@@ -1,0 +1,6 @@
+.login-container {
+    padding-bottom: 50px;
+}
+.login-container md-input-container {
+    width: 300px;
+}

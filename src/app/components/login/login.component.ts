@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {MdSnackBar} from '@angular/material';
+
 import { AuthenticationService } from '../../services/authentication/authentication.service';
 import { User } from '../../classes/user';
 
@@ -16,7 +18,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthenticationService,
-    private router: Router
+    private router: Router,
+    public snackBar: MdSnackBar
   ) { }
 
   ngOnInit() {
@@ -30,7 +33,10 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/dashboard']);
         }
         else{
-          this.error = 'Username or password is incorrect';
+          let message = 'Username or password is incorrect';
+          this.snackBar.open(message, "Login", {
+            duration: 2000
+          });
         }
       })
   }

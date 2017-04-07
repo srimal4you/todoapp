@@ -1,5 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-	background-color: #336E7B;
-	-webkit-font-smoothing: subpixel-antialiased;
+@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
+
+html, body, material-app, md-sidenav-container {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+md-card {
+  max-width: 80%;
+  margin: 2em auto;
+  text-align: center;
+}
+
+md-toolbar-row {
+  justify-content: space-between;
+}
+
+.done {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
 }

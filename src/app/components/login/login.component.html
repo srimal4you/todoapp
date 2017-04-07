@@ -1,6 +1,17 @@
-<form>
-	<p *ngIf="error">{{error}}</p>
-	<input type="text" name="username" [(ngModel)]="model.username"><br>
-	<input type="password" name="username" [(ngModel)]="model.password"><br>
-	<button (click)="authUser()">Submit</button>
-</form>
+<md-card class="login-container">
+	<md-card-title>Sign In</md-card-title>
+
+	  <p *ngIf="error">{{error}}</p>
+
+<md-input-container>
+  <input mdInput placeholder="Email Address" [(ngModel)]="model.username">
+</md-input-container>
+<br>
+<md-input-container>
+  <input mdInput placeholder="Password" [(ngModel)]="model.password">
+</md-input-container>
+<br>
+	    <button md-raised-button (click)="authUser()">Log In</button>
+
+	<md-card-footer>@todoApp Demo Version</md-card-footer>
+</md-card>

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './modules/router.module';
 import { MaterialModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { TodoComponent } from './components/todo/todo.component';
@@ -25,6 +26,7 @@ import 'hammerjs';
     FormsModule,
     HttpModule,
     MaterialModule,
+    BrowserAnimationsModule,
     AppRoutingModule
   ],
   providers: [AuthGuard, AuthenticationService],
